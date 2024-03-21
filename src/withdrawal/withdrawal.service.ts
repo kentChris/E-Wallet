@@ -42,7 +42,6 @@ export class WithdrawalService {
                 owned_by: user.customer_xid,
             }),
             this.getWithFilter({
-                withdrawn_by: user.customer_xid,
                 reference_id: dto.reference_id,
             })
         ]); 

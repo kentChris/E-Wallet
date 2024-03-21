@@ -3,12 +3,12 @@ import { IsNotEmpty, IsPositive, IsUUID } from "class-validator";
 
 export class WithdrawalRequestDto {
     @ApiProperty()
-    @IsNotEmpty({message: "Missing data for required field" })
     @IsUUID()
+    @IsNotEmpty({message: "Missing data for required field" })
     reference_id: string;
 
     @ApiProperty()
-    @IsNotEmpty({message: "Missing data for required field" })
     @IsPositive({ message: 'Value must be above 0' })
+    @IsNotEmpty({message: "Missing data for required field" })
     amount: number;
 }

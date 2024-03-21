@@ -43,10 +43,9 @@ export class DepositService {
             }),
 
             this.getWithFilter({
-                deposited_by: user.customer_xid,
                 reference_id: dto.reference_id,
             })
-        ]); 
+        ]);
 
         if(!wallet) {
             throw new NotFoundException('Wallet disabled');
@@ -77,6 +76,7 @@ export class DepositService {
                 await this.walletService.saveWithTransaction(wallet, entityManager);
             });
         }catch(e) {
+            console.log(e);
             throw new InternalServerErrorException('Something wrong when submiting to db');
         }
     }
